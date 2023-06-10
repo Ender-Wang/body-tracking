@@ -9,6 +9,10 @@ namespace UnityEngine.XR.ARFoundation.Samples
     public class HumanBodyTracker : MonoBehaviour
     {
         [SerializeField]
+        [Tooltip("The cube prefab to be placed above the tracked body.")]
+        GameObject m_CubePrefab;
+
+        [SerializeField]
         [Tooltip("The Skeleton prefab to be controlled.")]
         GameObject m_SkeletonPrefab;
 
@@ -23,6 +27,16 @@ namespace UnityEngine.XR.ARFoundation.Samples
         {
             get { return m_HumanBodyManager; }
             set { m_HumanBodyManager = value; }
+        }
+
+        /// <summary>
+        /// Get/Set the cube prefab.
+        /// </summary>
+        /// <value></value>
+        public GameObject cubePrefab
+        {
+            get { return m_CubePrefab; }
+            set { m_CubePrefab = value; }
         }
 
         /// <summary>
@@ -64,6 +78,11 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
                 boneController.InitializeSkeletonJoints();
                 boneController.ApplyBodyPose(humanBody);
+
+                // Instantiate the cube prefab
+                GameObject cubeGO = Instantiate(m_CubePrefab);
+                cubeGO.transform.parent = humanBody.transform;
+                cubeGO.transform.localPosition = Vector3.up * 1.01f; // Position the cube above the root bone
             }
 
             foreach (var humanBody in eventArgs.updated)

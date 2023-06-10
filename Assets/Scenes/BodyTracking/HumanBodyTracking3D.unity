@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.4439372, g: 0.49315345, b: 0.5721989, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -67,6 +67,9 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -524,6 +527,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+  m_RaycastSnapVolumeInteraction: 1
   m_HitClosestOnly: 0
   m_HoverToSelect: 0
   m_HoverTimeToSelect: 0.5
@@ -616,10 +620,10 @@ MonoBehaviour:
   m_TrackingStateAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Tracking State
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 84175564-23aa-4529-a97e-d7f41a48c8fd
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -648,10 +652,10 @@ MonoBehaviour:
   m_SelectActionValue:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Select Action Value
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 5fc089ea-f7e2-42bb-a79a-a26439b31214
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -672,10 +676,10 @@ MonoBehaviour:
   m_ActivateActionValue:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Activate Action Value
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: c6dee7c7-75ea-4b8d-9f0f-854373d766ca
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -728,10 +732,10 @@ MonoBehaviour:
   m_UIPressActionValue:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: UI Press Action Value
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: ad467731-cf58-47f5-831d-4dc6816691a1
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -764,10 +768,10 @@ MonoBehaviour:
   m_DirectionalAnchorRotationAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Directional Anchor Rotation
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: fc055389-0004-44e7-9d03-2c130977f9dd
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1540,6 +1544,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+  m_RaycastSnapVolumeInteraction: 1
   m_HitClosestOnly: 0
   m_HoverToSelect: 0
   m_HoverTimeToSelect: 0.5
@@ -1632,10 +1637,10 @@ MonoBehaviour:
   m_TrackingStateAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Tracking State
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 2398eaa4-c4f7-4e0a-8797-c35d534e6087
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1664,10 +1669,10 @@ MonoBehaviour:
   m_SelectActionValue:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Select Action Value
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: a959023b-806e-49e1-be55-0b0f9e280997
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1688,10 +1693,10 @@ MonoBehaviour:
   m_ActivateActionValue:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Activate Action Value
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 9005c2f3-0947-4064-a4d8-107464edc716
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1728,10 +1733,10 @@ MonoBehaviour:
   m_UIPressActionValue:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: UI Press Action Value
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 9275fe32-7035-48db-9d92-550d7754bdae
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1764,10 +1769,10 @@ MonoBehaviour:
   m_DirectionalAnchorRotationAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Directional Anchor Rotation
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: e25205ac-f449-472d-9448-2dfafc3031f2
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -2311,10 +2316,10 @@ MonoBehaviour:
   m_TrackingStateInput:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Tracking State Input
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: da6dad22-36d6-4f2c-8d93-9a1f721107bf
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -2505,6 +2510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf5ecb2146fc5426f910be243e4df158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_CubePrefab: {fileID: 1934569588295450, guid: b34b6c8f1206a6844b983e23b9da0441,
+    type: 3}
   m_SkeletonPrefab: {fileID: 6790265602204177959, guid: d93d5415c51fa49aba66e61ec7b78b34,
     type: 3}
   m_HumanBodyManager: {fileID: 1319991953}

@@ -4392,7 +4392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CubePrefab: {fileID: 1934569588295450, guid: b34b6c8f1206a6844b983e23b9da0441,
     type: 3}
-  m_SkeletonPrefab: {fileID: 6790265602204177959, guid: 96b2ddc33f0fe453e9aeb251750fbf94,
+  m_SkeletonPrefab: {fileID: 6790265602204177959, guid: 73179baa055544546be060572f97c306,
     type: 3}
   m_HumanBodyManager: {fileID: 1319991953}
   initializationArmObjs:

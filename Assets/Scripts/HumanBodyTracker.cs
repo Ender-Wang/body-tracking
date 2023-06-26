@@ -136,30 +136,23 @@ namespace UnityEngine.XR.ARFoundation.Samples
                 cubeGO.transform.parent = humanBody.transform;
                 cubeGO.transform.localPosition = Vector3.forward * -1.01f; // Position the cube in front of the body
 
-                // //TODO: Generate text around the body
-                // // GenerateTextAroundBody(humanBody.transform.gameObject);
-                // // Generate an empty textMeshProUGUI object
-                GameObject dataObj = new GameObject();
-                dataObj.transform.parent = cubeGO.transform;
-                dataObj.transform.localPosition = Vector3.forward * -1.01f;
+                //TODO: Generate thousands of text text around the body
 
-                // //Add a textMeshProUGUI component to the empty text object
-                TextMeshProUGUI dataTexts = dataObj.AddComponent<TextMeshProUGUI>();
-                dataTexts.text = "Loading Data...";
-                float fontSize = Screen.dpi / 5f;
-                dataTexts.fontSize = fontSize;
-                dataTexts.alignment = TextAlignmentOptions.Left;
-                dataTexts.color = Color.red;
-                // // dataTexts.fontSizeMin = 5f;
-                // // dataTexts.fontSizeMax = 10f;
+                // Create a text object and parent it to the cube
+                GameObject textObj = new GameObject("Text2");
+                textObj.transform.parent = cubeGO.transform;
+                textObj.transform.localPosition = new Vector3(0, 0, 0);
 
-                // for (int i = 0; i < dataLeakTextList.Count; i++)
-                // {
-                //     dataTexts.text += dataLeakTextList[i] + "\n";
-                // }
+                // add a TextMeshPro component to the text object, set proper text size and scale
+                TextMeshPro textMesh2 = textObj.AddComponent<TextMeshPro>();
+                textMesh2.text = "Loading Data 2...";
+                textMesh2.fontSize = 24f;
+                textMesh2.rectTransform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
 
-                // // Adjust the dataObj to face the text towards the camera
-                // dataObj.transform.localRotation = Quaternion.Euler(0, -180f, 0);
+                // rotate text object to face the camera
+                Transform cameraTransform = Camera.main.transform;
+                textObj.transform.rotation = Quaternion.LookRotation(textObj.transform.position - cameraTransform.position);
+                StartCoroutine(UpdateTextRotation(textObj.transform, cameraTransform));
             }
 
             foreach (var humanBody in eventArgs.updated)
@@ -180,12 +173,25 @@ namespace UnityEngine.XR.ARFoundation.Samples
                 }
             }
         }
+        IEnumerator UpdateTextRotation(Transform textTransform, Transform cameraTransform)
+        {
+            while (true)
+            {
+                // Calculate the desired rotation to face the camera
+                Quaternion targetRotation = Quaternion.LookRotation(textTransform.position - cameraTransform.position);
+
+                // Smoothly interpolate the rotation to avoid sudden changes
+                textTransform.rotation = Quaternion.Slerp(textTransform.rotation, targetRotation, Time.deltaTime * 5f);
+
+                yield return null;
+            }
+        }
 
         // Generate text around the body
-        private void GenerateTextAroundBody(GameObject humanBody)
+        private void GenerateRandomTextAroundBody(GameObject cubeGO)
         {
-            Vector3 initialPosition = humanBody.transform.position + Vector3.up * 50f;
-            Vector3 positionOffset = Vector3.down * 0.5f; // Adjust the vertical spacing between rows
+            int randomIndex = Random.Range(0, dataLeakTextList.Count);
+            return dataLeakTextList[randomIndex];
         }
     }
 }

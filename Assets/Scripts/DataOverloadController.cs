@@ -28,7 +28,7 @@ public class DataOverloadController : MonoBehaviour
             for (int j = 0; j < text.Length; j++)
             {
                 textMesh.text += text.Substring(j, 1);
-                yield return new WaitForSeconds(0.5f / text.Length - 0.005f * i);    // Speed up on every i iteration
+                yield return new WaitForSeconds(0.33333f / text.Length);    // Speed up on every i iteration:  - 0.005f * i)
             }
         }
     }

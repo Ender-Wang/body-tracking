@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class LogicController : MonoBehaviour
 {
+    // [Header("Canvas Prefab")]
+    // public GameObject canvasPrefab; // The prefab of the Canvas objects
+
     [Header("UI Objects")]
     public GameObject autoScrollTextObj;
     public GameObject verifyingConnectionObj;
     public GameObject initializationObj;
     public GameObject bodyTrackingObj;
+    public GameObject dataOverloadObj;
+    public GameObject watchingMeObj;
+    public GameObject endingObj;
 
     [Header("UI Texts")]
     public GameObject readyText;
@@ -25,47 +31,26 @@ public class LogicController : MonoBehaviour
     private float fadeTimer;
     private float fadeOutDuration = 1f;
 
-    private List<string> dataLeakTextList = new List<string>(){
+    private bool monitoringSwipe;
+    void Start()
+    {
+        StartCoroutine(DelayedSwipeMonitoring());
+        // CanvasStateManager.Instance.InstantiateCanvas();
+    }
 
-            "Loading Avaliable Data:",
-            "",
-            "Loading Citizen Profile...",
-            "",
-            "Identity: Jane Smith",
-            "Gender: Female",
-            "Date of Birth: 09/12/1985",
-            "Nationality: Citizen",
-            "Residence: Sector 12B",
-            "Social Credit Score: 950",
-            "Employment: Employed",
-            "Education: Bachelor's Degree",
-            "Financial Status: Stable",
-            "Criminal Record: None",
-            "",
-            "Loading Identification Documents...",
-            "",
-            "Driver's License: Valid, Class B, Expires 05/15/2026",
-            "Passport: Valid, Expires 03/25/2030",
-            "",
-            "Loading Contact Information...",
-            "",
-            "Phone Number: +9876543210",
-            "Email Address: janesmith@email.com",
-            "",
-            "Loading Financial Data...",
-            "",
-            "Bank Accounts:",
-            "- Account 1: IBAN: 1234_5678_9012_3456",
-            "- Account 2: IBAN: 9876_5432_1098_7654",
-            "- Account 3: IBAN: 2468_1357_8024_6802",
-            "",
-            "Data loading complete. Please note that all the information provided here is fictional and randomly generated for illustrative purposes only."
-        };
-
+    IEnumerator DelayedSwipeMonitoring()
+    {
+        yield return new WaitForSeconds(5f);
+        monitoringSwipe = true;
+        yield break;
+    }
     // Update is called once per frame
     void Update()
     {
-        swipeUp();
+        if (monitoringSwipe)
+        {
+            swipeUp();
+        }
     }
 
     //monitor the swipe up gesture
@@ -121,8 +106,12 @@ public class LogicController : MonoBehaviour
     private void activateVerifyingConnectionAndInitializationAndBodyTracking()
     {
         verifyingConnectionObj.SetActive(true);
+
         StartCoroutine(DelayActivationOfInitializationObj());
+
         bodyTrackingObj.SetActive(true);
+
+        StartCoroutine(DelayErrorAndWatchingEnding());
     }
 
     // Delay activation of initializationObj
@@ -176,5 +165,32 @@ public class LogicController : MonoBehaviour
 
         autoScrollTextObj.SetActive(false);
         autoScrollTextObj.transform.localScale = originalScale;
+    }
+
+    IEnumerator DelayErrorAndWatchingEnding()
+    {
+        // Destroy bodyTrackingObj after 30 seconds
+        yield return new WaitForSeconds(30f);
+        Destroy(bodyTrackingObj);
+        Destroy(initializingText);
+        Destroy(initializationObj);
+
+        // Activate dataOverloadObj and show the dataLeakTextList
+        dataOverloadObj.SetActive(true);
+
+        // Show the dataLeakTextList for 8 seconds
+        yield return new WaitForSeconds(8);
+        Destroy(dataOverloadObj);
+
+        // Activate watchingMeObj and show the watchingMeText
+        watchingMeObj.SetActive(true);
+
+        // Show the watchingMeText for 22 seconds
+        yield return new WaitForSeconds(22f);
+        Destroy(watchingMeObj);
+
+        // Activate endingObj and show the endingText
+        endingObj.SetActive(true);
+        yield return null;
     }
 }

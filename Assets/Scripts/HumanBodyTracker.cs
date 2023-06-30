@@ -29,135 +29,97 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
         // Data leak text list to be shown when a body is detected
         private List<string> dataLeakTextList = new List<string>(){
-
             "Loading Avaliable Data:",
-            "",
             "Loading Citizen Profile...",
             "",
-            "Identity: Jane Smith",
-            "Gender: Female",
-            "Date of Birth: 09/12/1985",
-            "Nationality: Citizen",
-            "Residence: Sector 12B",
-            "Social Credit Score: 950",
-            "Employment: Employed",
-            "Education: Bachelor's Degree",
-            "Financial Status: Stable",
-            "Criminal Record: None",
+
+            "Identity: Jane Smith\nGender: Female\nDate of Birth: 09/12/1985\nNationality: Citizen\nResidence: Sector 12B\nSocial Credit Score: 950\nEmployment: Employed\nEducation: Bachelor's Degree\nFinancial Status: Stable\nCriminal Record: None",
             "",
+
             "Loading Identification Documents...",
             "",
-            "Driver's License: Valid, Class B, Expires 05/15/2026",
-            "Passport: Valid, Expires 03/25/2030",
+            "Driver's License: Valid, Class B, Expires 05/15/2026\nPassport: Valid, Expires 03/25/2030\n",
             "",
+
             "Loading Contact Information...",
             "",
-            "Phone Number: +9876543210",
-            "Email Address: janesmith@email.com",
+            "Phone Number: +49 4643577\nEmail Address: janesmith@email.com",
             "",
+
             "Loading Financial Data...",
             "",
             "Bank Accounts:",
-            "- Account 1: IBAN: 1234_5678_9012_3456",
-            "- Account 2: IBAN: 9876_5432_1098_7654",
-            "- Account 3: IBAN: 2468_1357_8024_6802",
+            "- Account 1: IBAN: 1234_5678_9012_3456\n- Account 2: IBAN: 9876_5432_1098_7654\n- Account 3: IBAN: 2468_1357_8024_6802",
+
+            "Residence: Apartment 123\nSocial Credit Score: 820\nEmployment: Self-employed\nEducation: High School Diploma\nFinancial Status: Moderate\nCriminal Record: None\n",
             "",
-            "Residence: Apartment 123",
-            "Social Credit Score: 820",
-            "Employment: Self-employed",
-            "Education: High School Diploma",
-            "Financial Status: Moderate",
-            "Criminal Record: None",
-            "",
+
             "Loading Identification Documents...",
             "",
-            "Driver's License: Valid, Class C, Expires 10/15/2024",
-            "Passport: Valid, Expires 08/31/2029",
+            "Driver's License: Valid, Class C, Expires 10/15/2024\nPassport: Valid, Expires 08/31/2029",
             "",
+
             "Loading Contact Information...",
             "",
-            "Phone Number: +1234567890",
-            "Email Address: johndoe@email.com",
+            "Phone Number: +1234567890\nEmail Address: johndoe@email.com",
             "",
+
             "Loading Financial Data...",
             "",
-            "Bank Accounts:",
-            "- Account 1: IBAN: 9876_5432_1098_7654",
-            "- Account 2: IBAN: 1234_5678_9012_3456",
-            "- Account 3: IBAN: 2468_1357_8024_6802",
+            "Bank Accounts:\n- Account 1: IBAN: 9876_5432_1098_7654\n- Account 2: IBAN: 1234_5678_9012_3456\n- Account 3: IBAN: 2468_1357_8024_6802\n",
             "",
-            "Nationality: Canadian",
-            "Residence: Unit 45A",
-            "Social Credit Score: 700",
-            "Employment: Unemployed",
-            "Education: Master's Degree",
-            "Financial Status: Limited",
-            "Criminal Record: None",
+
+            "Nationality: Canadian\nResidence: Unit 45A\nSocial Credit Score: 700\nEmployment: Unemployed\nEducation: Master's Degree\nFinancial Status: Limited\nCriminal Record: None\n",
             "",
+
             "Loading Identification Documents...",
             "",
-            "Driver's License: Valid, Class G, Expires 07/22/2025",
-            "Passport: Valid, Expires 06/15/2032",
+            "Driver's License: Valid, Class G, Expires 07/22/2025\nPassport: Valid, Expires 06/15/2032",
             "",
+
             "Loading Contact Information...",
             "",
-            "Phone Number: +9876543210",
-            "Email Address: emilyjohnson@email.com",
+            "Phone Number: +9876543210\nEmail Address: emilyjohnson@email.com",
             "",
+
             "Loading Financial Data...",
             "",
-            "Bank Accounts:",
-            "- Account 1: IBAN: 1234_5678_9012_3456",
-            "- Account 2: IBAN: 9876_5432_1098_7654",
-            "- Account 3: IBAN: 1357_2468_8024_6802",
+            "Bank Accounts:\n- Account 1: IBAN: 1234_5678_9012_3456\n- Account 2: IBAN: 9876_5432_1098_7654\n- Account 3: IBAN: 1357_2468_8024_6802\n",
             "",
-            "Residence: House 789",
-            "Social Credit Score: 550",
-            "Employment: Employed",
-            "Education: Doctorate Degree",
-            "Financial Status: Stable",
-            "Criminal Record: None",
+
+            "Residence: House 789\nSocial Credit Score: 55\nEmployment: Employed\nEducation: Doctorate Degre\nFinancial Status: Stabl\nCriminal Record: Non\n",
             "",
+
             "Loading Identification Documents...",
             "",
-            "Driver's License: Valid, Class D, Expires 11/30/2027",
-            "Passport: Valid, Expires 09/20/2035",
+            "Driver's License: Valid, Class D, Expires 11/30/2027\nPassport: Valid, Expires 09/20/2035",
             "",
+
             "Loading Contact Information...",
             "",
-            "Phone Number: +1234567890",
-            "Email Address: michaelbrown@email.com",
+            "Phone Number: +1234567890\nEmail Address: michaelbrown@email.com\n",
             "",
+
             "Loading Financial Data...",
             "",
-            "Bank Accounts:",
-            "- Account 1: IBAN: 9876_5432_1098_7654",
-            "- Account 2: IBAN: 1234_5678_9012_3456",
-            "- Account 3: IBAN: 8024_6802_1357_2468",
+            "Bank Accounts:\n- Account 1: IBAN: 9876_5432_1098_7654\n- Account 2: IBAN: 1234_5678_9012_3456\n- Account 3: IBAN: 8024_6802_1357_2468\n",
             "",
+
             "Loading Citizen Profile...",
             "",
-            "Identity: Jane Smith",
-            "Gender: Female",
-            "Date of Birth: 09/12/1985",
-            "Nationality: Citizen",
-            "Residence: Sector 12B",
-            "Social Credit Score: 950",
-            "Employment: Employed",
-            "Education: Bachelor's Degree",
-            "Financial Status: Stable",
-            "Criminal Record: None",
+            "Identity: Jane Smith\nGender: Female\nDate of Birth: 09/12/1985\nNationality: Citizen\nResidence: Sector 12B\nSocial Credit Score: 950\nEmployment: Employed\nEducation: Bachelor's Degree\nFinancial Status: Stable\nCriminal Record: None\n",
             "",
+
             "Loading Identification Documents...",
             "",
-            "Driver's License: Valid, Class B, Expires 05/15/2026",
-            "Passport: Valid, Expires 03/25/2030",
+            "Driver's License: Valid, Class B, Expires 05/15/2026\nPassport: Valid, Expires 03/25/2030",
             "",
+
             "Loading Contact Information...",
             "",
-            "Phone Number: +9876543210",
-            "Email Address: janesmith@email.com",
+            "Phone Number: +9876543210\nEmail Address: janesmith@email.com",
             "",
+
             "Loading Financial Data...",
             "",
             "Bank Accounts:",
@@ -544,6 +506,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
         // Generate text around the body
         private IEnumerator GenerateRandomText(GameObject cubeGO)
         {
+            int textCount = dataLeakTextList.Count;
             // loop through dataLeakTextList and instantiate a text object for each string
             for (int i = 0; i < dataLeakTextList.Count; i++)
             {
@@ -563,8 +526,8 @@ namespace UnityEngine.XR.ARFoundation.Samples
                 textObj.transform.rotation = Quaternion.LookRotation(textObj.transform.position - cameraTransform.position);
                 StartCoroutine(UpdateTextRotation(textObj.transform, cameraTransform));
 
-                // lines of dataLeakTextList divided by 30 seconds, each line of text will be displayed for 0.07246377 seconds
-                yield return new WaitForSeconds(0.07246377f);
+                // lines of dataLeakTextList divided by 30 seconds
+                yield return new WaitForSeconds(30f / textCount);
             }
         }
 

@@ -178,15 +178,15 @@ public class LogicController : MonoBehaviour
         // Activate dataOverloadObj and show the dataLeakTextList
         dataOverloadObj.SetActive(true);
 
-        // Show the dataLeakTextList for 22 seconds
-        yield return new WaitForSeconds(22f);
+        // Show the dataLeakTextList for 18 seconds
+        yield return new WaitForSeconds(18f);
         Destroy(dataOverloadObj);
 
         // Activate watchingMeObj and show the watchingMeText
         watchingMeObj.SetActive(true);
 
-        // Show the watchingMeText for 22 seconds
-        yield return new WaitForSeconds(22f);
+        // Show the watchingMeText for 20 seconds
+        yield return new WaitForSeconds(20f);
         Destroy(watchingMeObj);
 
         // Activate endingObj and show the endingText

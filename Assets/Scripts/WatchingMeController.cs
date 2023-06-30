@@ -30,7 +30,7 @@ public class WatchingMeController : MonoBehaviour
             for (int j = 0; j < text.Length; j++)
             {
                 textMesh.text += text.Substring(j, 1);
-                yield return new WaitForSeconds(0.3333f / text.Length);
+                yield return null;//new WaitForSeconds(0.3333f / text.Length);
             }
         }
     }

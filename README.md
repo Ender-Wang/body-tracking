@@ -1,3 +1,21 @@
+# Project Description
+Translucence is a project that focuses on the ethics of data collection by law enforcement in the imminent future. Our app educates about a world without privacy---one in which we already live.
+
+# How to build and run on your ios device
+
+-  The project is specifically designed on an iPad Pro 11'; iPads are recommended for the best experience :) Note: The app only works on iOS devices with A12 bionic chip or newer.
+
+To build to device, follow the steps below:
+1. Requirements: a Mac with Xcode installed, search for 'Xcode' in Mac's App Store and install it if you haven't already, and an iPad/iPhone(optional).
+
+2. Install Unity 2022.2.10f1 or later on a Mac and clone this repository.
+
+3. Open the Unity project at the root of this repository.
+
+4. As with any other Unity project, go to [Build Settings](https://docs.unity3d.com/Manual/BuildSettings.html), select iOS, and build this project. You will be asked to save the file to an empty folder.
+
+5. Find the file called `Unity-iPhone.xcodeproj` in the root directory of the folder you just saved, and double-click it to open it in Xcode. Then follow [the instructions of building and running an app on Xcode to your iOS devices from Apple](https://developer.apple.com/documentation/xcode/building-and-running-an-app.)
+
 # AR Foundation Samples
 
 Example AR scenes that use [AR Foundation 5.1](https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.1/manual/index.html) and demonstrate its features. Each feature is used in a minimal sample scene with example code that you can modify or copy into your project.
